@@ -1,1 +1,139 @@
-{"sections":{"1fc50893-d6bd-4eaf-bf10-aa41ba55e416":{"type":"collection-list","blocks":{"template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-1":{"type":"featured_collection","settings":{"collection":"clear-corrugated-roofing-sheets"}},"template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-2":{"type":"featured_collection","settings":{"collection":"bitumen-corrugated-roofing-sheets"}},"b0009504-3af8-40cf-8970-283f0a420bb5":{"type":"featured_collection","settings":{"collection":"polycarbonate-roof-sheets"}},"43de523d-893c-4ff8-910b-1a694fa14df9":{"type":"featured_collection","settings":{"collection":"alukap-glazing-bars"}},"fb3ff022-3e1b-4fd4-a97e-2164bd437ea9":{"type":"featured_collection","settings":{"collection":"rafter-supported-aluminium-glazing-bars"}},"f4db9c68-11cf-4411-a326-e629861a5c75":{"type":"featured_collection","settings":{"collection":"self-supporting-aluminium-glazing-bars"}}},"block_order":["template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-1","template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-2","b0009504-3af8-40cf-8970-283f0a420bb5","43de523d-893c-4ff8-910b-1a694fa14df9","fb3ff022-3e1b-4fd4-a97e-2164bd437ea9","f4db9c68-11cf-4411-a326-e629861a5c75"],"custom_css":[".card__media .media img {border-radius: 50%;}",".card--standard {padding: 1rem; border-radius: none; border: none;}",".card__heading {font-size: 1.1rem; text-align: center;}"],"settings":{"title":"","heading_size":"h2","image_ratio":"square","color_scheme":"background-2","show_view_all":false,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":48,"padding_bottom":8}},"banner":{"type":"main-collection-banner","custom_css":[".collection-hero__description {max-width: 100%;}"],"settings":{"show_collection_description":true,"show_collection_image":false,"color_scheme":"background-1"}},"product-grid":{"type":"main-collection-product-grid","custom_css":["h3.card__heading {font-size: 1.2rem;}",".price__container {font-size: 1.3rem;}",".vat {font-size: 0.9rem;}",".ex-vat {display: none;}"],"settings":{"products_per_page":24,"columns_desktop":4,"image_ratio":"adapt","image_shape":"default","show_secondary_image":false,"show_vendor":true,"show_rating":false,"enable_quick_add":false,"enable_filtering":true,"filter_type":"vertical","enable_sorting":false,"columns_mobile":"2","padding_top":36,"padding_bottom":36}},"a4771665-064a-48a9-9e19-2de885ef345c":{"type":"rich-text","blocks":{"template--16808943354174__a4771665-064a-48a9-9e19-2de885ef345c-16710518875ca4bcd9-1":{"type":"text","settings":{"text":"{{ collection.metafields.custom.bottom_description | metafield_tag }}"}}},"block_order":["template--16808943354174__a4771665-064a-48a9-9e19-2de885ef345c-16710518875ca4bcd9-1"],"custom_css":[".rich-text__wrapper {width: 100%; display: block;}",".rich-text__blocks {max-width: 100%;}"],"settings":{"desktop_content_position":"center","content_alignment":"left","color_scheme":"background-2","full_width":true,"padding_top":48,"padding_bottom":48}}},"order":["1fc50893-d6bd-4eaf-bf10-aa41ba55e416","banner","product-grid","a4771665-064a-48a9-9e19-2de885ef345c"]}
+{
+  "sections": {
+    "1fc50893-d6bd-4eaf-bf10-aa41ba55e416": {
+      "type": "collection-list",
+      "blocks": {
+        "template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "clear-corrugated-roofing-sheets"
+          }
+        },
+        "template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bitumen-corrugated-roofing-sheets"
+          }
+        },
+        "b0009504-3af8-40cf-8970-283f0a420bb5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "polycarbonate-roof-sheets"
+          }
+        },
+        "43de523d-893c-4ff8-910b-1a694fa14df9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "alukap-glazing-bars"
+          }
+        },
+        "fb3ff022-3e1b-4fd4-a97e-2164bd437ea9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "rafter-supported-aluminium-glazing-bars"
+          }
+        },
+        "f4db9c68-11cf-4411-a326-e629861a5c75": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "self-supporting-aluminium-glazing-bars"
+          }
+        }
+      },
+      "block_order": [
+        "template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-1",
+        "template--17524069957950__1fc50893-d6bd-4eaf-bf10-aa41ba55e416-1673359994384097d4-2",
+        "b0009504-3af8-40cf-8970-283f0a420bb5",
+        "43de523d-893c-4ff8-910b-1a694fa14df9",
+        "fb3ff022-3e1b-4fd4-a97e-2164bd437ea9",
+        "f4db9c68-11cf-4411-a326-e629861a5c75"
+      ],
+      "custom_css": [
+        ".card__media .media img {border-radius: 50%;}",
+        ".card--standard {padding: 1rem; border-radius: none; border: none;}",
+        ".card__heading {font-size: 1.1rem; text-align: center;}"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 6,
+        "color_scheme": "background-2",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 48,
+        "padding_bottom": 8
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "custom_css": [
+        ".collection-hero__description {max-width: 100%;}"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [
+        "h3.card__heading {font-size: 1.2rem;}",
+        ".price__container {font-size: 1.3rem;}",
+        ".vat {font-size: 0.9rem;}",
+        ".ex-vat {display: none;}"
+      ],
+      "settings": {
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "a4771665-064a-48a9-9e19-2de885ef345c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--16808943354174__a4771665-064a-48a9-9e19-2de885ef345c-16710518875ca4bcd9-1": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.metafields.custom.bottom_description | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "template--16808943354174__a4771665-064a-48a9-9e19-2de885ef345c-16710518875ca4bcd9-1"
+      ],
+      "custom_css": [
+        ".rich-text__wrapper {width: 100%; display: block;}",
+        ".rich-text__blocks {max-width: 100%;}"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "1fc50893-d6bd-4eaf-bf10-aa41ba55e416",
+    "banner",
+    "product-grid",
+    "a4771665-064a-48a9-9e19-2de885ef345c"
+  ]
+}
