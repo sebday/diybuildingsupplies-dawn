@@ -52,6 +52,40 @@
       <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
         <div class="js-contents">
           {%- if cart != empty -%}
+            {% assign isFreeDelivery = false %}
+            {% assign isNeverFree = false %}
+
+            {% for item in cart.items %}
+              {% if item.product.vendor == 'Bowland Stone' or item.product.vendor == 'Shire' %}
+                {% assign isFreeDelivery = true %}
+              {% endif %}
+              {% if item.product.vendor == 'Clear Amber' %}
+                {% assign isNeverFree = true %}
+              {% endif %}
+            {% endfor %}
+
+            {% if cart.total_price < 41600 and isFreeDelivery == false %}
+              {% assign isFreeDelivery = false %}
+            {% else %}
+              {% assign isFreeDelivery = true %}
+            {% endif %}
+
+            {% if isFreeDelivery == false and isNeverFree == false %}
+              <div class="announcement-bar color-accent-2 gradient">
+                <p class="announcement-bar__message h5">
+                  🚚 You are
+                  <strong>£{{ 41600 | minus: cart.total_price | times: 1.2 | money_without_currency }}</strong> away
+                  from FREE delivery.
+                </p>
+              </div>
+            {%- endif -%}
+
+            {% if isFreeDelivery == true and isNeverFree == false %}
+              <div class="announcement-bar color-accent-2 gradient">
+                <p class="announcement-bar__message h5">🚚 FREE DELIVERY</p>
+              </div>
+            {%- endif -%}
+            <br>
             <table class="cart-items">
               <caption class="visually-hidden">
                 {{ 'sections.cart.title' | t }}

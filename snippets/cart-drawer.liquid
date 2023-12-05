@@ -6,7 +6,6 @@
 {% endcomment %}
 
 {{ 'quantity-popover.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
@@ -21,7 +20,7 @@
   <div id="CartDrawer" class="cart-drawer">
     <div id="CartDrawer-Overlay" class="cart-drawer__overlay"></div>
     <div
-      class="drawer__inner gradient color-{{ settings.cart_color_scheme }}"
+      class="drawer__inner"
       role="dialog"
       aria-modal="true"
       aria-label="{{ 'sections.cart.title' | t }}"
@@ -83,35 +82,51 @@
         >
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
+              {% assign isFreeDelivery = false %}
+              {% assign isNeverFree = false %}
+
+              {% for item in cart.items %}
+                {% if item.product.vendor == 'Bowland Stone' or item.product.vendor == 'Shire' %}
+                  {% assign isFreeDelivery = true %}
+                {% endif %}
+                {% if item.product.vendor == 'Clear Amber' %}
+                  {% assign isNeverFree = true %}
+                {% endif %}
+              {% endfor %}
+
+              {% for item in cart.items limit: 1 %}
+                {% assign DeliveryTime = item.product.metafields.custom.delivery_time.value %}
+                {% assign DeliveryCost = item.product.metafields.custom.delivery_cost.value %}
+              {%- endfor -%}
+
+              {% if cart.total_price < 41600 and isFreeDelivery == false %}
+                {% capture DeliveryString %}
+                {{ DeliveryTime }} delivery {{ DeliveryCost }}
+              {% endcapture %}
+              {% elsif isNeverFree == true %}
+                {% capture DeliveryString %}
+                {{ DeliveryTime }} delivery {{ DeliveryCost }}
+              {% endcapture %}
+              {% else %}
+                {% assign isFreeDelivery = true %}
+                {% assign DeliveryCost = '🆓 FREE DELIVERY' %}
+                {% capture DeliveryString %}
+                {{ DeliveryCost }} {{ DeliveryTime }}
+              {% endcapture %}
+              {% endif %}
+
+              {% if isFreeDelivery == false and isNeverFree == false %}
+                <div class="announcement-bar color-accent-2 gradient">
+                  <p class="announcement-bar__message h5">
+                    🚚 You are
+                    <strong>£{{ 41600 | minus: cart.total_price | times: 1.2 | money_without_currency }}</strong> away
+                    from <strong>FREE delivery</strong>.
+                  </p>
+                </div>
+              {%- endif -%}
+
               <div class="drawer__cart-items-wrapper">
                 <table class="cart-items" role="table">
-                  <thead role="rowgroup">
-                    <tr role="row">
-                      <th id="CartDrawer-ColumnProductImage" role="columnheader">
-                        <span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span>
-                      </th>
-                      <th
-                        id="CartDrawer-ColumnProduct"
-                        class="caption-with-letter-spacing"
-                        scope="col"
-                        role="columnheader"
-                      >
-                        {{ 'sections.cart.headings.product' | t }}
-                      </th>
-                      <th
-                        id="CartDrawer-ColumnTotal"
-                        class="right caption-with-letter-spacing"
-                        scope="col"
-                        role="columnheader"
-                      >
-                        {{ 'sections.cart.headings.total' | t }}
-                      </th>
-                      <th id="CartDrawer-ColumnQuantity" role="columnheader">
-                        <span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span>
-                      </th>
-                    </tr>
-                  </thead>
-
                   <tbody role="rowgroup">
                     {%- for item in cart.items -%}
                       <tr id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item" role="row">
@@ -146,17 +161,20 @@
                               </span>
                               <s class="cart-item__old-price product-option">
                                 {{- item.original_price | money -}}
+                                <span class="vat">ex vat</span>
                               </s>
                               <span class="visually-hidden">
                                 {{ 'products.product.price.sale_price' | t }}
                               </span>
                               <strong class="cart-item__final-price product-option">
-                                {{ item.final_price | money }}
+                                {{ item.final_price | times: 1.2 | money }}
+                                <span class="vat">inc vat</span>
                               </strong>
                             </div>
                           {%- else -%}
                             <div class="product-option">
-                              {{ item.original_price | money }}
+                              {{ item.original_price | times: 1.2 | money }}
+                              <span class="vat">inc vat</span>
                             </div>
                           {%- endif -%}
 
@@ -219,7 +237,20 @@
                         </td>
 
                         <td class="cart-item__totals right" role="cell" headers="CartDrawer-ColumnTotal">
-                          {%- render 'loading-spinner' -%}
+                          <div class="loading-overlay hidden">
+                            <div class="loading-overlay__spinner">
+                              <svg
+                                aria-hidden="true"
+                                focusable="false"
+                                class="spinner"
+                                viewBox="0 0 66 66"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                              </svg>
+                            </div>
+                          </div>
+
                           <div class="cart-item__price-wrapper">
                             {%- if item.original_line_price != item.final_line_price -%}
                               <div class="cart-item__discounted-prices">
@@ -227,18 +258,18 @@
                                   {{ 'products.product.price.regular_price' | t }}
                                 </span>
                                 <s class="cart-item__old-price price price--end">
-                                  {{ item.original_line_price | money }}
+                                  {{ item.original_line_price | times: 1.2 | money }}
                                 </s>
                                 <span class="visually-hidden">
                                   {{ 'products.product.price.sale_price' | t }}
                                 </span>
                                 <span class="price price--end">
-                                  {{ item.final_line_price | money }}
+                                  {{ item.final_line_price | times: 1.2 | money }}
                                 </span>
                               </div>
                             {%- else -%}
                               <span class="price price--end">
-                                {{ item.original_line_price | money }}
+                                {{ item.original_line_price | times: 1.2 | money }}
                               </span>
                             {%- endif -%}
 
@@ -487,8 +518,19 @@
           </div>
 
           <div class="totals" role="status">
-            <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-            <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+            <h2 class="totals__total">Subtotal</h2>
+            <h3 class="totals__total-value">
+              {{ cart.total_price | times: 1.2 | money }}
+              <span class="vat">inc vat</span>
+            </h3>
+            <p class="totals__total-value">
+              {{ cart.total_price | money }}
+              <span class="vat">ex vat</span>
+            </p>
+          </div>
+
+          <div class="deliverytime">
+            {{ DeliveryString }}
           </div>
 
           <small class="tax-note caption-large rte">

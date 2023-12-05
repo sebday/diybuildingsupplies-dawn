@@ -59,9 +59,51 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  <h2 class="totals__total">Subtotal</h2>
+                  <h3 class="totals__total-value">
+                    {{ cart.total_price | times: 1.2 | money }}
+                    <span class="vat">inc vat</span>
+                  </h3>
+                  <p class="totals__total-value">
+                    {{ cart.total_price | money }}
+                    <span class="vat">ex vat</span>
+                  </p>
                 </div>
+
+                {% assign isFreeDelivery = false %}
+                {% assign isNeverFree = false %}
+
+                {% for item in cart.items %}
+                  {% if item.product.vendor == 'Bowland Stone' or item.product.vendor == 'Shire' %}
+                    {% assign isFreeDelivery = true %}
+                  {% endif %}
+                  {% if item.product.vendor == 'Clear Amber' %}
+                    {% assign isNeverFree = true %}
+                  {% endif %}
+                {% endfor %}
+
+                {% for item in cart.items limit: 1 %}
+                  {% assign DeliveryTime = item.product.metafields.custom.delivery_time.value %}
+                  {% assign DeliveryCost = item.product.metafields.custom.delivery_cost.value %}
+                {%- endfor -%}
+
+                {% if cart.total_price < 41600 and isFreeDelivery == false %}
+                  {% capture DeliveryString %}
+                    {{ DeliveryTime }} delivery {{ DeliveryCost }}
+                  {% endcapture %}
+                {% elsif isNeverFree == true %}
+                  {% capture DeliveryString %}
+                    {{ DeliveryTime }} delivery {{ DeliveryCost }}
+                  {% endcapture %}
+                {% else %}
+                  {% assign isFreeDelivery = true %}
+                  {% assign DeliveryCost = '🆓 FREE DELIVERY' %}
+                  {% capture DeliveryString %}
+                    {{ DeliveryCost }} {{ DeliveryTime }}
+                  {% endcapture %}
+                {% endif %}
+
+                <div class="deliverytime">{{ DeliveryString }}</div>
 
                 <small class="tax-note caption-large rte">
                   {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
