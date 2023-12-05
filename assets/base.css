@@ -3664,15 +3664,17 @@ button:disabled.button--primary {
   font-size: 1.5rem;
 }
 
-#shopify-section-template--20937391800638__16799165137d28d075 {
-  background:white;
-}
+
 
 #admin-bar-iframe {
   display: none;
 }
 
 /* cart drawer & cart page */
+
+.cart-drawer .drawer__inner {
+  background:white;
+}
 
 .cart-drawer .cart-item__name {
   font-size: 1.1rem;
