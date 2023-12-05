@@ -95,6 +95,35 @@ The [Shopify Theme Store](https://themes.shopify.com/) is the place where Shopif
 
 Ensure that you follow the list of [theme store requirements](https://shopify.dev/themes/store/requirements) if you're interested in becoming a [Shopify Theme Partner](https://themes.shopify.com/services/themes/guidelines) and building themes for the Shopify platform.
 
+## Custom change log
+
+collection-list.liquid 		- added extra column in schema
+
+card-collection.liquid		- added missing alt tag
+
+footer.liquid 			- removed shopify link
+
+collage.liquid			- added link to image block in schema & removed lazy loading
+
+price.liquid			- added inc/ex vat pricing, added coverage & sku, remove sold out badge
+
+cart-drawer.liquid		- added vat, removed table header, added free delivery
+
+main-cart-items.liquid		- added free delivery block & vat 
+
+main-cart-footer.liquid		- added vat, removed table header, added free delivery
+
+buy-buttons.liquid		- added contact us button when out of stock
+
+header.liquid			- add trade button & styling into base.css, changed logo to h2
+
+social-icons.liquid		- added linkedin
+
+header-drawer.liquid		- added linkedin
+
+base.css 			- generic css at bottom (mostly as custom css in theme now) *** move more here again?
+
+
 ## License
 
 Copyright (c) 2021-present Shopify Inc. See [LICENSE](/LICENSE.md) for further details.
