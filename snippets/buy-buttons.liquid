@@ -114,6 +114,15 @@
     </div>
   {%- endif -%}
 
+  {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
+    <a
+      href="?show_chat"
+      class="product-form__submit button button--full-width button--contact"
+      onclick="document.getElementById('dummy-chat-button-iframe').contentDocument.querySelector('.chat-toggle').click()"
+      >Contact us</a
+    >
+  {%- endif -%}
+
   {%- if show_pickup_availability -%}
     {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
