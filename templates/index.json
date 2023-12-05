@@ -125,7 +125,7 @@
         "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
-        "color_scheme": "background-2",
+        "color_scheme": "background-1",
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
@@ -169,7 +169,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "full_width": true,
         "padding_top": 48,
         "padding_bottom": 24
@@ -187,9 +187,9 @@
       ],
       "settings": {
         "custom_liquid": "<div class=\"brands page-width\">\n<h3>SHOP BY BRAND<\/h3>\n    <ul>\n        <li><a href=\"\/collections\/pir-insulation\" title=\"Browse our range of Celotex PIR insulation\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0673\/1281\/2350\/files\/celotex.webp?v=1695302892\" alt=\"Celotex insulation\" \/><\/a><\/li>\n        <li><a href=\"\/collections\/isover-insulation\" title=\"Browse our range of Isover insulation\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0673\/1281\/2350\/files\/isover.webp?v=1695302891\" alt=\"Isover insulation\" \/><\/a><\/li>\n        <li><a href=\"\/collections\/floor-insulation\" title=\"Browse our range of Jablite insulation\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0673\/1281\/2350\/files\/jablite.webp?v=1695302892\" alt=\"Jablite insulation\" \/><\/a><\/li>\n        <li><a href=\"\/collections\/knauf-insulation\" title=\"Browse our range of Knauf glass mineral wool insulation\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0673\/1281\/2350\/files\/knauf.webp?v=1695302892\" alt=\"Knauf insulation\" \/><\/a><\/li>\n        <li><a href=\"\/collections\/kingspan-insulation\" title=\"Browse our range of Kingspan insulation\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0673\/1281\/2350\/files\/kingspan.webp?v=1695302892\" alt=\"Kingspan insulation\" \/><\/a><\/li>\n        <li><a href=\"\/collections\/recticel-insulation\" title=\"Browse our range of Recticel insulation\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0673\/1281\/2350\/files\/recticel.webp?v=1695302892\" alt=\"Recticel insulation\" \/><\/a><\/li>\n    <\/ul>\n<\/div>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "color_scheme": "background-2",
+        "padding_top": 4,
+        "padding_bottom": 4
       }
     },
     "35f579bd-fad8-4ddc-bf11-0ab5f3339f9a": {
@@ -639,7 +639,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "background-2",
         "full_width": true,
         "padding_top": 40,
         "padding_bottom": 24
@@ -661,7 +661,7 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "left",
-        "color_scheme": "",
+        "color_scheme": "background-2",
         "full_width": true,
         "padding_top": 24,
         "padding_bottom": 48
@@ -756,7 +756,7 @@
         "background_style": "primary",
         "button_label": "",
         "button_link": "",
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
