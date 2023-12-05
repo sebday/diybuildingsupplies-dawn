@@ -56,7 +56,7 @@
     {%- endcomment -%}
     <div class="price__regular">
       {%- if product.quantity_price_breaks_configured? -%}
-        {%- if show_compare_at_price and compare_at_price -%}
+        {%- if show_compare_at_price -%}
           {%- unless product.price_varies == false and product.compare_at_price_varies %}
             <span class="visually-hidden visually-hidden--inline">
               {{- 'products.product.price.regular_price' | t -}}
@@ -78,28 +78,38 @@
         </span>
       {%- else -%}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span class="price-item price-item--regular">
+        <span class="price-item price-item--regular inc-vat">
+          {{ price | times: 1.2 | money }}
+        </span>
+        <span class="vat">inc VAT</span> <br>
+        <span class="price-item price-item--regular ex-vat">
           {{ money_price }}
         </span>
+        <span class="vat ex-vat">ex VAT</span>
       {%- endif -%}
     </div>
     <div class="price__sale">
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span>
-          <s class="price-item price-item--regular">
-            {% if settings.currency_code_enabled %}
-              {{ compare_at_price | money_with_currency }}
-            {% else %}
-              {{ compare_at_price | money }}
-            {% endif %}
+          <s class="price-item ">
+            {{ compare_at_price | times: 1.2 | money }}
           </s>
         </span>
       {%- endunless -%}
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-      <span class="price-item price-item--sale price-item--last">
-        {{ money_price }}
-      </span>
+      <div>
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
+        <span class="price-item price-item--sale price-item--last inc-vat">
+          {{ price | times: 1.2 | money }}
+        </span>
+        <span class="vat">inc VAT</span>
+      </div>
+      <div class="ex-vat">
+        <span class="price-item">
+          {{ money_price }}
+        </span>
+        <span class="vat ex-vat">ex VAT</span>
+      </div>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
@@ -116,13 +126,21 @@
       </span>
     </small>
   </div>
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+  <div class="coverage">
+    {% if product.metafields.custom.coverage.value != blank %}
+      <span class="metresquare">
+        {{- product.price | divided_by: product.metafields.custom.coverage.value | money }} per m²</span
+      ><br>
+    {% endif %}
+    <span class="sku">{{ current_variant.sku }}</span>
+  </div>
+
   {%- if show_badges -%}
     <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
       {{ 'products.product.on_sale' | t }}
-    </span>
-
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-      {{ 'products.product.sold_out' | t }}
     </span>
   {%- endif -%}
 </div>
