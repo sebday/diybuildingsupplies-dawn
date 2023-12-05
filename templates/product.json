@@ -263,11 +263,11 @@
         "2fdbf047-6606-46eb-9a8c-228aa57e09d3"
       ],
       "custom_css": [
-        "#rapid_reviews_items {background: white; padding: 8rem 0;}",
+        "#rapid_reviews_items {background: white; padding: 4rem;}",
         ".rapid_reviews_items {max-width: 1100px;}"
       ],
       "settings": {
-        "include_margins": true
+        "include_margins": false
       }
     }
   },
