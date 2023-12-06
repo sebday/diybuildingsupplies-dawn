@@ -1,1 +1,76 @@
-{"name":"t:sections.footer.name","type":"footer","sections":{"footer":{"type":"footer","blocks":{"footer-1":{"type":"link_list","settings":{"heading":"Shop","menu":"footer"}},"d77ebb2e-f2dc-4142-973b-bb98226be963":{"type":"link_list","settings":{"heading":"Info","menu":"footer-info-menu"}},"fe9d774b-2163-4f33-b780-9a4ac32932c1":{"type":"text","settings":{"heading":"Contact Us","subtext":"<p>☎️ <a href=\"tel:01156976800\" title=\"tel:01156976800\">0115 6976 800<\/a><\/p><p>✉️ <a href=\"mailto:sales@diybuildingsupplies.co.uk\" title=\"mailto:sales@diybuildingsupplies.co.uk\">sales@diybuildingsupplies.co.uk<\/a><\/p><p>📟 <a href=\"https:\/\/diybuildingsupplies.co.uk\/?show_chat\" title=\"Use our live chat 9am-4pm\">live chat<\/a><\/p><p>Monday to Friday 9am - 4pm<\/p>"}},"e4992d15-d934-4c68-be23-2b57ecc16995":{"type":"text","settings":{"heading":"Address","subtext":"<p>Unit 6 Lawmax House, <\/p><p>30 - 32 Nottingham Road, <\/p><p>Stapleford, <\/p><p>Nottingham, NG9 8AA  <\/p>"}},"4e33f5af-2190-42cf-99b5-2d2db3f9fa02":{"type":"image","disabled":true,"settings":{"image":"shopify:\/\/shop_images\/diy-building-supplies-logo-full-colour-rgb-1920px_300ppi.png","image_width":200,"alignment":"center"}}},"block_order":["footer-1","d77ebb2e-f2dc-4142-973b-bb98226be963","fe9d774b-2163-4f33-b780-9a4ac32932c1","e4992d15-d934-4c68-be23-2b57ecc16995","4e33f5af-2190-42cf-99b5-2d2db3f9fa02"],"custom_css":[".footer-block__details-content {font-size: 1.4rem;}"],"settings":{"color_scheme":"accent-1","newsletter_enable":false,"newsletter_heading":"Sign up to our newsletter for £20 off!","enable_follow_on_shop":false,"show_social":true,"enable_country_selector":false,"enable_language_selector":false,"payment_enable":true,"show_policy":false,"margin_top":0,"padding_top":48,"padding_bottom":48}}},"order":["footer"]}
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "footer"
+          }
+        },
+        "d77ebb2e-f2dc-4142-973b-bb98226be963": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Info",
+            "menu": "footer-info-menu"
+          }
+        },
+        "fe9d774b-2163-4f33-b780-9a4ac32932c1": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact Us",
+            "subtext": "<p>☎️ <a href=\"tel:01156976800\" title=\"tel:01156976800\">0115 6976 800<\/a><\/p><p>✉️ <a href=\"mailto:sales@diybuildingsupplies.co.uk\" title=\"mailto:sales@diybuildingsupplies.co.uk\">sales@diybuildingsupplies.co.uk<\/a><\/p><p>📟 <a href=\"https:\/\/diybuildingsupplies.co.uk\/?show_chat\" title=\"Use our live chat 9am-4pm\">live chat<\/a><\/p><p>Monday to Friday 9am - 4pm<\/p>"
+          }
+        },
+        "e4992d15-d934-4c68-be23-2b57ecc16995": {
+          "type": "text",
+          "settings": {
+            "heading": "Address",
+            "subtext": "<p>Unit 6 Lawmax House, <\/p><p>30 - 32 Nottingham Road, <\/p><p>Stapleford, <\/p><p>Nottingham, NG9 8AA  <\/p>"
+          }
+        },
+        "4e33f5af-2190-42cf-99b5-2d2db3f9fa02": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/diy-building-supplies-logo-full-colour-rgb-1920px_300ppi.png",
+            "image_width": 200,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "footer-1",
+        "d77ebb2e-f2dc-4142-973b-bb98226be963",
+        "fe9d774b-2163-4f33-b780-9a4ac32932c1",
+        "e4992d15-d934-4c68-be23-2b57ecc16995",
+        "4e33f5af-2190-42cf-99b5-2d2db3f9fa02"
+      ],
+      "custom_css": [
+        ".footer-block__details-content {font-size: 1.4rem;}",
+        "\/* linkedin icon *\/.icon-tumblr {fill: white; height: 25px!important; width: 21px!important;}"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Sign up to our newsletter for £20 off!",
+        "enable_follow_on_shop": false,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
