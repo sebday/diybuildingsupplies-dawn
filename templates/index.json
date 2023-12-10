@@ -108,7 +108,6 @@
     },
     "952f3a5e-3ee1-460a-90de-ae74f6b2d501": {
       "type": "featured-collection",
-      "disabled": true,
       "custom_css": [
         ".ex-vat {display: none;}",
         ".price__regular,.price__sale {font-size: 1.2rem;}"
@@ -120,7 +119,7 @@
         "show_description": false,
         "description_style": "body",
         "collection": "insulation",
-        "products_to_show": 12,
+        "products_to_show": 5,
         "columns_desktop": 5,
         "full_width": false,
         "show_view_all": false,
